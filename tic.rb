@@ -15,12 +15,13 @@ def printing(arr)
   end
   puts
 end
-
+$pigi_lof = 0
 def horizontal?(a,b,c,arr)
   if arr[a]==arr[b]
     if arr[b]==arr[c]
       if arr[a] != "O"
         print "Winner"
+        $pigi_lof = 1
       end
     end
   end
@@ -37,6 +38,7 @@ def vertical?(a,arr)
     if arr[a+3]==arr[a+6]
       if arr[a] != "O"
         print "Winner"
+        $pigi_lof = 1
       end
     end
   end
@@ -65,4 +67,7 @@ for i in 0...8
   printing(arr)
   is_horiz(arr)
   is_vertical?(arr)
+  if $pigi_lof == 1
+    break
+  end
 end
