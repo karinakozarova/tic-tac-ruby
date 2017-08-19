@@ -7,20 +7,18 @@ def printing(arr)
     puts
   end
 end
-def horizontal?(a,b,c,arr)
-  if arr[a]==arr[b]
-    if arr[b]==arr[c]
-      if arr[a] != "O"
+
+def horizontal?(a,arr)
+  if arr[a]==arr[a+1] && arr[a+1]==arr[a+2]
         print "Winner"
-      end
     end
-  end
 end
 def is_horiz(arr)
-  horizontal?(0,1,2,arr)
-  horizontal?(3,4,5,arr)
-  horizontal?(7,8,9,arr)
+  horizontal?(0,arr)
+  horizontal?(3,arr)
+  horizontal?(7,arr)
 end
+
 def vertical?(a,arr)
   if arr[a]==arr[a+3]
     if arr[a+3]==arr[a+6]
