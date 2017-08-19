@@ -1,19 +1,11 @@
 def printing(arr)
-  for i in 0...3
-    print arr[i]
-    print " "
+  for a in 0..2
+    for i in a*3...a*3+3
+      print arr[i]
+      print " "
+    end
+    puts
   end
-  puts
-  for i in 3...6
-    print arr[i]
-    print " "
-  end
-  puts
-  for i in 6...9
-    print arr[i]
-    print " "
-  end
-  puts
 end
 def horizontal?(a,b,c,arr)
   if arr[a]==arr[b]
