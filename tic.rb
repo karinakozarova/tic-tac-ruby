@@ -15,8 +15,8 @@ end
 
 def horizontal?(a,arr)
   if arr[a]==arr[a+1] && arr[a+1]==arr[a+2]
-        print "Winner"
-        $pigi_lof = 1
+    print "Winner"
+    $pigi_lof = 1
   end
 end
 def is_horiz(arr)
@@ -27,8 +27,8 @@ end
 
 def vertical?(a,arr)
   if arr[a]==arr[a+3] && arr[a+3]==arr[a+6]
-        print "Winner"
-        $pigi_lof = 1
+    print "Winner"
+    $pigi_lof = 1
   end
 end
 def is_vertical?(arr)
@@ -51,15 +51,21 @@ end
 
 initial_mssg()
 arr = ["0","1","2","3","4","5","6","7","8"]
-
 for i in 0...8
   input = gets.chomp.to_i
-  puts input
-  if i%2==1
-    arr[input] ="X"
+
+  if arr[input].to_i != input
+    puts"Enter another num!"
+    redo
   else
-    arr[input] ="Y"
+    if i%2==1
+      arr[input] ="X"
+    else
+      arr[input] ="Y"
+    end
   end
+
+
   printing(arr)
   is_horiz(arr)
   is_vertical?(arr)
