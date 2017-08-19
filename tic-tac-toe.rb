@@ -73,3 +73,5 @@ for i in 0...8
     break
  end
 end
+
+puts "It's a draw!"
