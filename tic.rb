@@ -7,11 +7,17 @@ def printing(arr)
     puts
   end
 end
+def initial_mssg()
+  nums = ["0","1","2","3","4","5","6","7","8"]
+  puts "Enter X or O num"
+  printing(nums)
+end
 
 def horizontal?(a,arr)
   if arr[a]==arr[a+1] && arr[a+1]==arr[a+2]
         print "Winner"
-    end
+        $pigi_lof = 1
+  end
 end
 def is_horiz(arr)
   horizontal?(0,arr)
@@ -20,23 +26,15 @@ def is_horiz(arr)
 end
 
 def vertical?(a,arr)
-  if arr[a]==arr[a+3]
-    if arr[a+3]==arr[a+6]
-      if arr[a] != "O"
+  if arr[a]==arr[a+3] && arr[a+3]==arr[a+6]
         print "Winner"
-      end
-    end
+        $pigi_lof = 1
   end
 end
 def is_vertical?(arr)
   vertical?(0,arr)
   vertical?(1,arr)
   vertical?(2,arr)
-end
-def initial_mssg()
-nums = ["0","1","2","3","4","5","6","7","8"]
-puts "Enter X or O num"
-printing(nums)
 end
 
 def is_diagonal?(arr)
