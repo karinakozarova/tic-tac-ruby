@@ -7,6 +7,7 @@ def printing(arr)
     puts
   end
 end
+
 def initial_mssg()
   nums = ["0","1","2","3","4","5","6","7","8"]
   puts "Enter X or O num"
@@ -19,6 +20,7 @@ def horizontal?(a,arr)
     $pigi_lof = 1
   end
 end
+
 def is_horiz(arr)
   horizontal?(0,arr)
   horizontal?(3,arr)
@@ -31,6 +33,7 @@ def vertical?(a,arr)
     $pigi_lof = 1
   end
 end
+
 def is_vertical?(arr)
   vertical?(0,arr)
   vertical?(1,arr)
@@ -38,15 +41,12 @@ def is_vertical?(arr)
 end
 
 def is_diagonal?(arr)
-  if ((arr[0] == arr[4]) && (arr[4] == arr[8])) && (arr[0] != "O")
-    print "Winner"
-    $pigi_lof = 1
-  end
-
-  if ((arr[2] == arr[4]) && (arr[4] == arr[6])) && (arr[2] != "O")
-    print "Winner"
-    $pigi_lof = 1
-  end
+    for i in 1..2
+      if (arr[4-i*2] == arr[4]) && (arr[4] == arr[4+i*2])
+        print "Winner"
+        $pigi_lof = 1
+      end
+    end
 end
 
 initial_mssg()
@@ -65,12 +65,11 @@ for i in 0...8
     end
   end
 
-
-  printing(arr)
-  is_horiz(arr)
-  is_vertical?(arr)
-  is_diagonal?(arr)
-  if $pigi_lof == 1
+ printing(arr)
+ is_horiz(arr)
+ is_vertical?(arr)
+ is_diagonal?(arr)
+ if $pigi_lof == 1
     break
-  end
+ end
 end
